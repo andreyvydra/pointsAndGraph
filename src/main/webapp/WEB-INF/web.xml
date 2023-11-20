@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>areaCheck</servlet-name>
+        <servlet-class>AreaCheckServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>areaCheck</servlet-name>
+        <url-pattern>/areaCheck</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>clear</servlet-name>
+        <servlet-class>ClearTableServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>clear</servlet-name>
+        <url-pattern>/clear</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>controller</servlet-name>
+        <servlet-class>ControllerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>controller</servlet-name>
+        <url-pattern>/app</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>default</servlet-name>
+        <servlet-class>io.undertow.servlet.handlers.DefaultServlet</servlet-class>
+        <init-param>
+            <param-name>directory-listing</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>resolve-against-context-root</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/static/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/dist/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/css/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/js/*</url-pattern>
+    </servlet-mapping>
+</web-app>
